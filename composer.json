@@ -1,0 +1,34 @@
+{
+  "name": "token27/docker-images-php",
+  "description": "An easy way to create and maintain PHP Docker images.",
+  "license": "MIT",
+  "type": "project",
+  "keywords": [
+    "docker",
+    "php",
+    "alpine"
+  ],
+  "homepage": "https://github.com/token27/docker-images-php/",
+  "support": {
+    "issues": "https://github.com/token27/docker-images-php/issues",
+    "wiki": "https://github.com/token27/docker-images-php/wiki",
+    "source": "https://github.com/token27/docker-images-php"
+  },
+  "authors": [
+    {
+      "name": "Token 27",
+      "homepage": "https://github.com/token27/",
+      "role": "Developer"
+    },
+    {
+      "name": "Token 27",
+      "homepage": "https://github.com/token27/",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Contributors",
+      "homepage": "https://github.com/token27/docker-images-php/graphs/contributors",
+      "role": "Contributor"
+    }
+  ]
+}
