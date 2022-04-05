@@ -1,0 +1,14 @@
+#!/bin/bash
+set -xe
+WEBSITE_FOLDER=/var/www/html
+
+if [ "$2" != "" ]; then
+  WEBSITE_FOLDER=$1
+fi
+
+chown -R "${APP_OWNER}":"${APP_GROUP}" "${WEBSITE_FOLDER}" &
+find "${WEBSITE_FOLDER}" -type d -exec chmod 0755 {} \; &
+find "${WEBSITE_FOLDER}" -type f -exec chmod 644 {} \; &
+
+chown -R "${APP_OWNER}":"${APP_GROUP}" "${WEBSITE_FOLDER}"
+chmod -R g+rwX "${WEBSITE_FOLDER}"

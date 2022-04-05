@@ -1,0 +1,11 @@
+#!/bin/bash
+set -xe
+FOLDER_CLEAN=/var/www/html
+
+if [ "$2" != "" ]; then
+  FOLDER_CLEAN=$1
+fi
+
+mkdir -p "${FOLDER_CLEAN}"
+cd "${FOLDER_CLEAN}"
+rm -rf "${FOLDER_CLEAN}"/*

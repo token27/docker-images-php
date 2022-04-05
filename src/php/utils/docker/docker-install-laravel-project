@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+LARAVEL_WEBSITE_FOLDER=/var/www/html
+
+if [ "$2" != "" ]; then
+  LARAVEL_WEBSITE_FOLDER=$1
+fi
+
+# Create folder
+docker-folder-clean "${LARAVEL_WEBSITE_FOLDER}"
+cd "${LARAVEL_WEBSITE_FOLDER}"
+
+# Update composer to version 2
+composer self-update --2
+
+# Install Laravel
+composer global require "laravel/installer=~1.1"
+composer create-project --prefer-dist laravel/laravel . --no-interaction
+
+docker-folder-website-permissions "${LARAVEL_WEBSITE_FOLDER}"

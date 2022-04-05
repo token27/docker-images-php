@@ -8,14 +8,14 @@ if [ "$2" != "" ]; then
 fi
 
 # Create folder
-mkdir -p "${CAKEPHP_WEBSITE_FOLDER}"
+docker-folder-clean "${CAKEPHP_WEBSITE_FOLDER}"
 cd "${CAKEPHP_WEBSITE_FOLDER}"
-m -rf ./*
 
 # Install CakePHP
 composer create-project --prefer-dist cakephp/app . --no-interaction
 touch ./bin/cake
 chmod +x ./bin/cake
+chown -R "${APP_OWNER}":"${APP_GROUP}" ./bin
 ln -s ./bin/cake /usr/bin/cake
 
 # Install additional cakephp plugins
@@ -24,3 +24,5 @@ composer require curl/curl --no-interaction
 composer require josegonzalez/dotenv --no-interaction
 composer require phpunit/phpunit --no-interaction
 composer require phpstan/phpstan --no-interaction
+
+docker-folder-website-permissions "${CAKEPHP_WEBSITE_FOLDER}"
