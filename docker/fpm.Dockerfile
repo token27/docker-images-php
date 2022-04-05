@@ -106,7 +106,7 @@ RUN apk add --no-cache --upgrade \
 COPY src/php/utils/docker/ /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-php-* \
   && chmod +x /usr/local/bin/docker-install-* \
-  && chmod +x /usr/local/bin/docker-website-* \
+  && chmod +x /usr/local/bin/docker-folder-* \
   && chmod +x /usr/local/bin/php-fpm-healthcheck
 
 # Install
@@ -138,7 +138,6 @@ RUN docker-php-ext-install \
     pdo_dblib \
     pdo_mysql \
     mysqli \
-    iconv \
     exif \
     soap \
     calendar

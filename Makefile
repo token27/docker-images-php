@@ -20,7 +20,7 @@ build-cli: clean-tags
 	./build-php.sh cli 8.0 3.14 latest
 	./build-php.sh cli 7.4 3.14
 	./build-php.sh cli 7.3 3.14
-	./build-php.sh cli 7.2 3.12 
+	./build-php.sh cli 7.2 3.12
 	./build-php.sh cli 7.1 3.10
 
 push-cli: BUILDINGIMAGE=cli
