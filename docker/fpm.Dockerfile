@@ -6,7 +6,7 @@ LABEL maintainer="Token27 <admin@token27.com>" \
     org.opencontainers.image.description="PHP FPM on Alpine Linux" \
     org.opencontainers.image.authors="Token27 <admin@token27.com>" \
     org.opencontainers.image.vendor="Token27" \
-    org.opencontainers.image.version="v1.0.0" \
+    org.opencontainers.image.version="v1.1.0" \
     org.opencontainers.image.url="https://hub.docker.com/r/token27/php/" \
     org.opencontainers.image.source="https://github.com/token27/php"
 
