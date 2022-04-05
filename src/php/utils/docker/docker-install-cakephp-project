@@ -25,4 +25,4 @@ composer require josegonzalez/dotenv --no-interaction
 composer require phpunit/phpunit --no-interaction
 composer require phpstan/phpstan --no-interaction
 
-docker-folder-website-permissions "${CAKEPHP_WEBSITE_FOLDER}"
+docker-folder-permissions "${CAKEPHP_WEBSITE_FOLDER}"

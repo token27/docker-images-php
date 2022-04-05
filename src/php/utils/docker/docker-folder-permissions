@@ -1,0 +1,14 @@
+#!/bin/bash
+set -xe
+FOLDER_PERMISSIONS=/var/www/html
+
+if [ "$2" != "" ]; then
+  FOLDER_PERMISSIONS=$1
+fi
+
+chown -R "${APP_OWNER}":"${APP_GROUP}" "${FOLDER_PERMISSIONS}" &
+find "${FOLDER_PERMISSIONS}" -type d -exec chmod 0755 {} \; &
+find "${FOLDER_PERMISSIONS}" -type f -exec chmod 644 {} \; &
+
+chown -R "${APP_OWNER}":"${APP_GROUP}" "${FOLDER_PERMISSIONS}"
+chmod -R g+rwX "${FOLDER_PERMISSIONS}"

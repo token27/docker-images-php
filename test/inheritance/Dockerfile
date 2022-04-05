@@ -1,4 +1,4 @@
-FROM token27/php-phalcon:cli-7.2-phalcon-3.4.5 as compile-php-extension
+FROM token27/php:cli-7.2 as compile-php-extension
 
 RUN set -x \
     && apk add --no-cache gnupg postgresql-client postgresql-dev \
@@ -7,7 +7,7 @@ RUN set -x \
     && docker-php-source-tarball clean \
     && apk del gnupg postgresql-dev
 
-FROM token27/php-phalcon:cli-7.2-phalcon-3.4.5 as compile-php-pecl-extension
+FROM token27/php:cli-7.2 as compile-php-pecl-extension
 
 RUN set -x \
     && apk add --no-cache --virtual .phpize-deps $PHPIZE_DEPS \

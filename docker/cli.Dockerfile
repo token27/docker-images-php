@@ -175,7 +175,12 @@ RUN chmod +x /usr/local/bin/install-psr \
     && rm -rf /usr/local/bin/install-psr
 
 # Removing all PHP leftovers since the helper scripts nor the official image are removing them
-RUN docker-php-source-tarball clean && rm /usr/local/bin/php-cgi && rm /usr/local/bin/phpdbg && rm -rf /tmp/pear ~/.pearrc \
+RUN docker-php-source-tarball clean &&  \
+    touch /usr/local/bin/php-cgi && \
+    touch /usr/local/bin/phpdbg && \
+    rm /usr/local/bin/php-cgi &&  \
+    rm /usr/local/bin/phpdbg &&  \
+    rm -rf /tmp/pear ~/.pearrc \
   && apk del .phpize-deps \
   && rm -rf /var/cache/apk/*
 
